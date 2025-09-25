@@ -1,11 +1,13 @@
 package com.diavolo.githubuserfinder.data.remote.dto
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class SearchResultDto(
-    @SerializedName("total_count")
+    @Json(name = "total_count")
     val totalCount: Int,
-    @SerializedName("incomplete_results")
+    @Json(name = "incomplete_results")
     val incompleteResults: Boolean,
     val items: List<GitHubUserDto>
 )

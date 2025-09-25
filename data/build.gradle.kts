@@ -41,7 +41,7 @@ dependencies {
     
     // Networking
     implementation(libs.retrofit)
-    implementation(libs.retrofit.gson)
+    implementation(libs.retrofit.moshi)
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging)
     
@@ -55,7 +55,9 @@ dependencies {
     kapt(libs.hilt.compiler)
     
     // JSON
-    implementation(libs.gson)
+    implementation(libs.moshi)
+    implementation(libs.moshi.kotlin)
+    kapt(libs.moshi.codegen)
     
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

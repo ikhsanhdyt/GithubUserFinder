@@ -1,13 +1,15 @@
 package com.diavolo.githubuserfinder.data.remote.dto
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class GitHubUserDto(
     val id: Long,
     val login: String,
-    @SerializedName("avatar_url")
+    @Json(name = "avatar_url")
     val avatarUrl: String,
-    @SerializedName("html_url")
+    @Json(name = "html_url")
     val htmlUrl: String,
     val type: String,
     val name: String? = null,
@@ -16,14 +18,14 @@ data class GitHubUserDto(
     val location: String? = null,
     val email: String? = null,
     val bio: String? = null,
-    @SerializedName("public_repos")
+    @Json(name = "public_repos")
     val publicRepos: Int = 0,
-    @SerializedName("public_gists")
+    @Json(name = "public_gists")
     val publicGists: Int = 0,
     val followers: Int = 0,
     val following: Int = 0,
-    @SerializedName("created_at")
+    @Json(name = "created_at")
     val createdAt: String? = null,
-    @SerializedName("updated_at")
+    @Json(name = "updated_at")
     val updatedAt: String? = null
 )
