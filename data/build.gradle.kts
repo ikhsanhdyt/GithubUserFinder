@@ -59,6 +59,10 @@ dependencies {
     implementation(libs.moshi.kotlin)
     kapt(libs.moshi.codegen)
     
+    // Debugging
+    debugImplementation(libs.chucker)
+    releaseImplementation(libs.chucker.no.op)
+    
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
