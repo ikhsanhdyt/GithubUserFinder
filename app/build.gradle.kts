@@ -42,38 +42,22 @@ android {
 }
 
 dependencies {
+    implementation(project(":presentation"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
+    
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    
-    // Networking
-    implementation(libs.retrofit)
-    implementation(libs.retrofit.gson)
-    implementation(libs.okhttp)
-    implementation(libs.okhttp.logging)
-    
-    // Database
-    implementation(libs.room.runtime)
-    implementation(libs.room.ktx)
-    kapt(libs.room.compiler)
     
     // Dependency Injection
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     
-    // Navigation
+    // Navigation (needed for GitHubUserFinderNavigation composable)
     implementation(libs.navigation.compose)
-    
-    // Image Loading
-    implementation(libs.coil.compose)
-    
-    // JSON
-    implementation(libs.gson)
     
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
